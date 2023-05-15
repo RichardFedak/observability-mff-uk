@@ -1,4 +1,3 @@
-#!/bin/bash -eu
 
 LOG_DIR="_logs"
 LOG_FILE="${LOG_DIR}/observability.log"
@@ -26,18 +25,15 @@ kill_downstream () {
   fi
 }
 
-# TODO Modify following process names according your environment.
-# Following app names are symlinks - if you don't have them you should either
-# create them or change variables to real process names in your environment.
-APP="loki"
+APP="/mnt/c/Users/richa/Desktop/installers/loki/loki-linux-amd64"
 kill_app
-APP="promtail"
+APP="/mnt/c/Users/richa/Desktop/installers/loki/promtail-linux-amd64"
 kill_app
-APP="prometheus"
+APP="/mnt/c/Users/richa/Desktop/installers/prometheus-2.44.0.linux-amd64/prometheus"
 kill_app
-APP="jaeger"
+APP="/mnt/c/Users/richa/Desktop/installers/jaeger-1.45.0-linux-amd64/jaeger-all-in-one"
 kill_app
-APP="grafana"
+APP="/usr/sbin/grafana"
 kill_app
 
 kill_downstream
